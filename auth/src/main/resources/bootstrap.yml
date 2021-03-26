@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: auth
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: e6678130-66ce-4a58-ba37-c1a3dfba8bf6
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        refresh-enabled: false
+      discovery:
+        server-addr: localhost:8848
+        namespace: e6678130-66ce-4a58-ba37-c1a3dfba8bf6
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: "t_"
+
+encrypt:
+  key-store:
+    location: classpath:/riiyn.jks
+    alias: riiyn
+    password: 102323
+    secret: 102323

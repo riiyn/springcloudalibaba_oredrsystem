@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.riiyn.mapper.MenuMapper">
+    <select id="getPageVo" resultMap="menuMap">
+        select * from t_menu
+    </select>
+    <resultMap id="menuMap" type="com.riiyn.entity.Menu">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="price" property="price"/>
+        <result column="flavor" property="flavor"/>
+        <association property="type" select="com.riiyn.mapper.TypeMapper.selectById" column="tid"/>
+    </resultMap>
+
+    <select id="search" resultMap="menuMap">
+        select * from t_menu where name like concat('%', #{param}, '%')
+    </select>
+</mapper>

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: e6678130-66ce-4a58-ba37-c1a3dfba8bf6
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        refresh-enabled: false
+      discovery:
+        server-addr: localhost:8848
+        namespace: e6678130-66ce-4a58-ba37-c1a3dfba8bf6
